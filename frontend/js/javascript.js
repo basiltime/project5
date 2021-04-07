@@ -25,10 +25,8 @@ apiRequest.onreadystatechange = () => {
   }
   
 };
-/* 
- * Capture and handle form submit event
- * Prevent default behaviour, prepare and send API request
-*/
+
+
 window.addEventListener('load', () => {
   apiRequest.open('GET', 'http://localhost:3000/api/furniture');
   apiRequest.send();
