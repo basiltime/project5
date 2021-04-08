@@ -18,9 +18,11 @@ apiRequest.onreadystatechange = () => {
       demo.textContent= response;
     
         let firstItem = response[0];
+        // write for each on response
         console.log(firstItem.name);
         console.log(firstItem.description);
         console.log(firstItem.imageUrl);
+        console.dir(firstItem);
     }
   }
   
