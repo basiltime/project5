@@ -46,12 +46,21 @@ body {
 
 .jumbotron {
   margin-bottom: 0px !important;
-  
+  margin-left: 0px !important;
+  padding-left: 0px !important;
 }
 
 #jumbotron-wrapper {
   border-top: 1px solid $warning !important;
   border-bottom: 1px solid $warning !important;
+}
+
+.h1-shadow {
   text-shadow: 1px 1px 2px $warning;
 }
 
+.section-header-hr {
+  width: 75%;
+  margin-left: 0px;
+  background-color: $warning;
+}
