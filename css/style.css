@@ -1,7 +1,9 @@
-img {
-  height: 220px;
-  -o-object-fit: cover;
-     object-fit: cover;
+.p-none {
+  padding: 0px !important;
+}
+
+.m-none {
+  margin: 0px !important;
 }
 
 .card {
@@ -13,9 +15,12 @@ img {
           transform: scale(1.0075);
 }
 
-img {
+.image-small {
+  height: 220px;
   border-top-left-radius: 15px !important;
   border-top-right-radius: 15px !important;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 body {
@@ -42,6 +47,18 @@ body {
   width: 75%;
   margin-left: 0px;
   background-color: #E88B1F;
+}
+
+.image-large {
+  width: 100%;
+  min-height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.single-product-card {
+  border-radius: 15px;
+  overflow: hidden;
 }
 
 /*!

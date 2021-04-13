@@ -22,19 +22,20 @@ const garfunkleName = document.getElementsByClassName('name')[4];
 const garfunkleDescription = document.getElementsByClassName('description')[4];
 const garfunklePrice = document.getElementsByClassName('price')[4];
 const garfunkleImage = document.getElementsByClassName('image')[4];
-// Prepare api request
+//Prepare api request
 let apiRequest = new XMLHttpRequest();
 apiRequest.onreadystatechange = () => {
   if (apiRequest.readyState === 4) {
-    // Creates error message
+    //Creates error message
     if (apiRequest.status == 404) {
       alert("We're sorry! The page you're looking for can't be found. There seems to be a problem on our end.")
     } else if (apiRequest.status == 500) {
       alert("Hmm, something went wrong. The server could not be reached. Please try again in a few minutes, and we'll work to fix the problem.")
     } else {
-      // Parses JSON response objects to text and displays requested information
+      //Parses JSON response objects to text and displays requested information
       response = JSON.parse(apiRequest.response);
-      // Stores each item object into a variable      
+
+      //Stores each item object into a variable      
       let norbert = response[0];
         norbertName.textContent = norbert.name;
         norbertDescription.textContent = norbert.description;
@@ -69,21 +70,19 @@ apiRequest.onreadystatechange = () => {
         garfunklePrice.textContent = "$" + garfunkle.price/100;
         garfunkleImage.src = garfunkle.imageUrl;
 
-      }
      
+      }
   }
-  
 };
-
-
-
-
 
 window.addEventListener('load', () => {
   apiRequest.open('GET', 'http://localhost:3000/api/teddies');
   apiRequest.send();
-});
+})
+;
  
 
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
 
 

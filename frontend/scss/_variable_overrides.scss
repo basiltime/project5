@@ -16,11 +16,13 @@ $light:         #F3E9F1;
 $dark:          #241628;
 
 
+// LIST VIEW PAGE //
+.p-none {
+  padding: 0px !important;
+}
 
-// Set height for images
-img {
-  height: 220px;
-  object-fit: cover;
+.m-none {
+  margin: 0px !important;
 }
 
 .card {
@@ -33,9 +35,11 @@ img {
   }
 }
 
-img {
+.image-small {
+  height: 220px;
   border-top-left-radius: 15px !important;
   border-top-right-radius: 15px !important;
+  object-fit: cover;
 }
 
 
@@ -64,3 +68,16 @@ body {
   margin-left: 0px;
   background-color: $warning;
 }
+
+// SINGLE VIEW PAGE //
+.image-large {
+  width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+}
+
+.single-product-card {    // The wrapper for the large single product view card
+  border-radius: 15px;
+  overflow: hidden;
+}
+
