@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
     <link rel="stylesheet" href="../../css/style.css" />
     <link rel="icon" href="../images/favicon.png">
+    <script>  
+        window.addEventListener('load', () => {
+        apiRequest2.open('GET', 'http://localhost:3000/api/teddies/5be9c8541c9d440000665243');
+        apiRequest2.send();
+        }); 
+    </script>
   </head>
 
   <body>
