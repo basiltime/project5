@@ -29,25 +29,58 @@ apiRequest2.onreadystatechange = () => {
       document.getElementById('image').setAttribute('src', response.imageUrl);
       document.getElementById('description').textContent=response.description;
 
-      // Loop through colors array and update the customize drop down menu
+  /*
+  Improve this code by making into a loop
+  */
       document.getElementById('option1').textContent = response.colors[0];
       document.getElementById('option2').textContent = response.colors[1];
       document.getElementById('option3').textContent = response.colors[2];
-
-      
-      
     }
   }
 };
 
-localStorage.clear();
 
-const addToCart = itemID => localStorage.setItem(itemID, 1);
+const addToCart = itemID => {
+  if (!localStorage.getItem(id)) {
+    localStorage.setItem(id, 1)
+    console.log(localStorage)
+    } else {
+      let addOne = parseInt(localStorage.getItem(id)) +1;
+      localStorage.setItem(id, addOne);
+      console.log(localStorage)
+    }
+  }
+
+const removeItem = itemID => {
+  let minusOne = parseInt(localStorage.getItem(id)) -1;
+
+      if (parseInt(localStorage.getItem(id)) >= 1 ) {
+      localStorage.setItem(id, minusOne);
+      console.log(localStorage);
+      } else {
+      localStorage.removeItem(id);
+      console.log(localStorage)
+      }
+}
+ 
+
+// Add to Cart event listener
+document.getElementById('addToCartBtn').addEventListener('click', ($event) => {
+  $event.preventDefault();
+  addToCart(id);
+
+});
 
 
-document.getElementById('addToCartBtn').addEventListener('click', addToCart(id));
+// Remove item event listener
+document.getElementById('removeItemBtn').addEventListener('click', ($event) => {
+  $event.preventDefault();
+  removeItem(id);
 
-// look into button types, maybe the button is the wrong kind? also prevent default maybe
+});
 
 
-console.log(localStorage);
+////////////////////////////////////////////////////////////////////////
+// Write logic to add the total number of items in the cart here
+////////////////////////////////////////////////////////////////////////
+document.getElementById('cartQty').textContent= localStorage.length;

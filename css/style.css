@@ -61,6 +61,16 @@ body {
   overflow: hidden;
 }
 
+#cartQty {
+  border-radius: 50%;
+  background-color: #E88B1F;
+  width: 15px;
+  height: 15px;
+  position: relative;
+  left: 30px;
+  bottom: -5px;
+}
+
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
