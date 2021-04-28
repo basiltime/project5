@@ -81,13 +81,15 @@ body {
   overflow: hidden;
 }
 
-// 
+
 #cartQty {
   border-radius: 50%;
-  background-color: $warning;
+  background-color: $info;
+  border: 1px solid darken($info, 10%);
   width: 15px;
   height: 15px;
   position: relative;
   left: 30px;
   bottom: -5px;
+  font-size: 9px;
 }

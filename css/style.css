@@ -63,12 +63,14 @@ body {
 
 #cartQty {
   border-radius: 50%;
-  background-color: #E88B1F;
+  background-color: #76C287;
+  border: 1px solid #53b268;
   width: 15px;
   height: 15px;
   position: relative;
   left: 30px;
   bottom: -5px;
+  font-size: 9px;
 }
 
 /*!

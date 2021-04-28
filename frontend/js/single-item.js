@@ -8,7 +8,9 @@ const id = urlParam.get("id");
 window.addEventListener('load', (itemId) => {
   apiRequest2.open('GET', `http://localhost:3000/api/teddies/${id}`);
   apiRequest2.send();
+  updateCart();
 });
+
 
 
 // GET request body
@@ -30,7 +32,7 @@ apiRequest2.onreadystatechange = () => {
       document.getElementById('description').textContent=response.description;
 
   /*
-  Improve this code by making into a loop
+  Improve this code by making into a loop?
   */
       document.getElementById('option1').textContent = response.colors[0];
       document.getElementById('option2').textContent = response.colors[1];
@@ -39,6 +41,9 @@ apiRequest2.onreadystatechange = () => {
   }
 };
 
+
+/////////////////////////////////////////////////////////////////////////
+// Cart Functionality - functions that add and remove items to localStorage
 
 const addToCart = itemID => {
   if (!localStorage.getItem(id)) {
@@ -64,23 +69,65 @@ const removeItem = itemID => {
 }
  
 
+/////////////////////////////////////////////////////////////////////////
+// Updates the number displayed on the cart icon in Navbar
+// !! THIS CODE IS REAPEATED ON PRODUCT-LIST.JS and ORDER-PAGE.JS. REFACTOR TO USE ONLY ONE INSTANCE OF THIS FUNCTION !!
+function updateCart() {
+  let totalQty = 0;
+
+for (let i = 0; i < localStorage.length; i++) {
+  let key = localStorage.key(i); // stores each key in the variable
+  let values = parseInt(localStorage.getItem(key));
+  totalQty= values + totalQty;
+}
+
+return document.getElementById('cartQty').textContent= totalQty;
+}
+
+updateCart();
+
+
+////////////////////////////////////////////////////////////////////////
 // Add to Cart event listener
 document.getElementById('addToCartBtn').addEventListener('click', ($event) => {
   $event.preventDefault();
   addToCart(id);
-
+  updateCart()
 });
 
 
+
+////////////////////////////////////////////////////////////////////////
 // Remove item event listener
 document.getElementById('removeItemBtn').addEventListener('click', ($event) => {
   $event.preventDefault();
   removeItem(id);
-
+  updateCart()
 });
 
 
+
+
+
 ////////////////////////////////////////////////////////////////////////
-// Write logic to add the total number of items in the cart here
-////////////////////////////////////////////////////////////////////////
-document.getElementById('cartQty').textContent= localStorage.length;
+// Customization Dropdown Menu
+
+let dropdownItems = document.getElementsByClassName('dropdown-item');
+
+for (let i = 0; i < dropdownItems.length; i++) {
+  dropdownItems[i].addEventListener('click', () => {
+    document.getElementById('dropdownMenuButton').textContent = dropdownItems[i].textContent;
+  });
+}
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Order Page
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+document.getElementsByTagName('tbody').textContent= "butts"

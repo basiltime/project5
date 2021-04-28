@@ -17,6 +17,7 @@ apiRequest.onreadystatechange = () => {
       
       response = JSON.parse(apiRequest.response);
         buttons= document.getElementsByClassName('btn');
+        
         response.forEach((item, index) => {
             id = item._id;
             document.getElementsByClassName('name')[index].textContent = item.name;
