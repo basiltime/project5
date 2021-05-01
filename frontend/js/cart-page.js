@@ -1,3 +1,4 @@
+//localStorage.clear()
 let totalDollarAmt = 0;
 let myCart = localStorage;
 
@@ -85,8 +86,8 @@ let address = document.getElementById('address');
 let city = document.getElementById('city');
 let email = document.getElementById('email');
 
-submitButton.addEventListener('click', ($event) => {
-  $event.preventDefault();
+submitButton.addEventListener('click', () => {
+
   let productsArray = [];
   for (let i = 0; i < localStorage.length; i++) {
     let item = localStorage.key(i); // item id
@@ -115,10 +116,14 @@ let data = {
    
   xhr.onload = () => {
     console.log(xhr.response);
+    
+    let total=document.getElementById('cart-total').textContent;
+    localStorage.setItem("id", xhr.response.orderId)
+    localStorage.setItem("price", total)
+    console.log(localStorage)
   };
 
 });
-
 
 
 
