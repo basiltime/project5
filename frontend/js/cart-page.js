@@ -97,14 +97,19 @@ let address = document.getElementById('address');
 let city = document.getElementById('city');
 let email = document.getElementById('email');
 
+
+
+
+
 submitButton.addEventListener('click', () => {
 
   let productsArray = [];
+
   for (let i = 0; i < localStorage.length; i++) {
     let item = localStorage.key(i); // item id
     productsArray.push(item);
-    
   }
+
   let contactData = {
     firstName: firstName.value,
     lastName: lastName.value,
@@ -113,10 +118,10 @@ submitButton.addEventListener('click', () => {
     email: email.value,
   }
 
-let data = {
-  contact: contactData,
-  products: productsArray
-}
+  let data = {
+    contact: contactData,
+    products: productsArray
+  }
   
   const xhr = new XMLHttpRequest();
   
@@ -130,9 +135,10 @@ let data = {
     let total=document.getElementById('cart-total').textContent;
     localStorage.setItem("id", xhr.response.orderId)
     localStorage.setItem("price", total)
-    console.log(localStorage)
+    console.log(localStorage);
+    window.location.href="/frontend/pages/confirmation-page.html"
   };
-
+  
 });
 
 

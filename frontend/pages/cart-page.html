@@ -46,6 +46,8 @@
     </div>
 </div>
 
+
+
 <!-- Order Summary -->
 
 <div class="container shadow-sm border border-warning my-5 py-5 d-none" id="cart-empty">
@@ -81,13 +83,14 @@
     </div>
 </section>
 
+<!-- 
+<section id="form" class="container"> -->
 
-<section id="form" class="container">
 
-    <form class="p-3">
+      <form id="form" class="container mb-5">
         <div class="form-row">
           <div class="form-group col-md-6">
-            <label for="first-name">First Name</label>
+            <label for="firstName">First Name</label>
             <input type="text" class="form-control" id="first-name" placeholder="First Name" required>
           </div>
           <div class="form-group col-md-6">
@@ -105,14 +108,15 @@
         </div>
         <div class="form-row">
           <div class="form-group col-md-6">
-            <label for="email">Email</label>
-            <input type="email" class="form-control" id="email" placeholder="Email" required>
+            <label for="email">Email Address</label>
+            <input type="text" class="form-control" id="email" placeholder="Email Address" required>
           </div>
         </div>
-        <a href="/frontend/pages/confirmation-page.html" id="submit-button" role="button" type="submit" class="btn btn-primary">Submit Order</a>
+        <button type="submit" id="submit-button" class="btn btn-primary">Submit Order</button>
       </form>
       
-</section>
+      
+
 <!-- FOOTER -->
 <footer class="bg-dark p-3 container-fluid text-light">
     <div class ="row text-center">
