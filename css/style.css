@@ -23,11 +23,6 @@
      object-fit: cover;
 }
 
-body {
-  background: #a768ba;
-  background: linear-gradient(331deg, rgba(167, 104, 186, 0.557861) 42%, rgba(230, 138, 8, 0.597076) 100%);
-}
-
 .jumbotron {
   margin-bottom: 0px !important;
   margin-left: 0px !important;
@@ -65,12 +60,24 @@ body {
   border-radius: 50%;
   background-color: #76C287;
   border: 1px solid #53b268;
-  width: 15px;
-  height: 15px;
+  min-width: 15px;
+  min-height: 15px;
   position: relative;
   left: 30px;
   bottom: -5px;
   font-size: 9px;
+}
+
+#confirmation-page {
+  height: 600px;
+  max-width: 500px;
+  border-radius: 15px !important;
+}
+
+#cart-empty {
+  height: 300px;
+  max-width: 500px;
+  border-radius: 15px !important;
 }
 
 /*!

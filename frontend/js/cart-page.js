@@ -1,11 +1,21 @@
-//localStorage.clear()
+
 let totalDollarAmt = 0;
 let myCart = localStorage;
 
   // Loop through localStorage, adding an event listener to call the GET api and populate the table with 
   // cart values.
 
+  if (localStorage.length === 0) {
+    document.getElementById("form").classList.add('d-none');
+    document.getElementById("summary").classList.add('d-none');
+    document.getElementById("cart-empty").classList.remove('d-none')
+  } else {
+
+ 
+   
+
   for (let i = 0; i < localStorage.length; i++) {
+
     let key = localStorage.key(i); // item id
     let values = parseInt(localStorage.getItem(key)); // item quantity
 
@@ -52,12 +62,12 @@ let myCart = localStorage;
         cell4.textContent = `$${response.price/100 * values}`; // quantity
         }
         }
-    }
+      }
     };
 
   }
   
-
+}
 
 // Update quantity displayed in cart icon in navbar
 
@@ -74,6 +84,7 @@ let myCart = localStorage;
   }
   
   updateCart();
+
 
 
 // Form Validation
@@ -116,7 +127,6 @@ let data = {
    
   xhr.onload = () => {
     console.log(xhr.response);
-    
     let total=document.getElementById('cart-total').textContent;
     localStorage.setItem("id", xhr.response.orderId)
     localStorage.setItem("price", total)

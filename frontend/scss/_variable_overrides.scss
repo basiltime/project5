@@ -16,6 +16,7 @@ $light:         #F3E9F1;
 $dark:          #241628;
 
 
+
 // LIST VIEW PAGE //
 .p-none {
   padding: 0px !important;
@@ -43,10 +44,7 @@ $dark:          #241628;
 }
 
 
-body {
-  background: rgb(167,104,186);
-  background: linear-gradient(331deg, rgba(167,104,186,0.5578606442577031) 42%, rgba(230,138,8,0.5970763305322129) 100%);
-}
+
 
 .jumbotron {
   margin-bottom: 0px !important;
@@ -86,10 +84,24 @@ body {
   border-radius: 50%;
   background-color: $info;
   border: 1px solid darken($info, 10%);
-  width: 15px;
-  height: 15px;
+  min-width: 15px;
+  min-height: 15px;
   position: relative;
   left: 30px;
   bottom: -5px;
   font-size: 9px;
+  
 }
+
+#confirmation-page {
+  height: 600px;
+  max-width: 500px;
+  border-radius: 15px !important;
+}
+
+#cart-empty {
+  height: 300px;
+  max-width: 500px;
+  border-radius: 15px !important;
+}
+

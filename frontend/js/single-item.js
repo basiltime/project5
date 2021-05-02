@@ -72,17 +72,23 @@ const removeItem = itemID => {
 /////////////////////////////////////////////////////////////////////////
 // Updates the number displayed on the cart icon in Navbar
 // !! THIS CODE IS REAPEATED ON PRODUCT-LIST.JS and ORDER-PAGE.JS. REFACTOR TO USE ONLY ONE INSTANCE OF THIS FUNCTION !!
+
+
 function updateCart() {
   let totalQty = 0;
+
 
 for (let i = 0; i < localStorage.length; i++) {
   let key = localStorage.key(i); // stores each key in the variable
   let values = parseInt(localStorage.getItem(key));
   totalQty= values + totalQty;
+  if (totalQty == 0) {removeItem(i)} // and if quantity of an item is 0, remove it from local storage with the removeItem function
 }
 
 return document.getElementById('cartQty').textContent= totalQty;
+
 }
+
 
 updateCart();
 

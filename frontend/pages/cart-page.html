@@ -48,7 +48,12 @@
 
 <!-- Order Summary -->
 
-<section class="container cart-summary p-5">
+<div class="container shadow-sm border border-warning my-5 py-5 d-none" id="cart-empty">
+    <div class="h2 m-3 text-center">Uh oh, looks like your cart is a bit bare!</div>
+    <div class="h4 m-5 text-center">Click <a href="../../index.html" class="text-decoration-none">here </a>to continue shopping</div>
+</div>
+
+<section id="summary" class="container cart-summary p-5">
     <div class="row">
         <div class="col">
             <div class="h3">Your Cart</div>
@@ -76,30 +81,31 @@
     </div>
 </section>
 
-<section class="container">
+
+<section id="form" class="container">
 
     <form class="p-3">
         <div class="form-row">
           <div class="form-group col-md-6">
-            <label for="inputEmail4">First Name</label>
+            <label for="first-name">First Name</label>
             <input type="text" class="form-control" id="first-name" placeholder="First Name" required>
           </div>
           <div class="form-group col-md-6">
-            <label for="inputPassword4">Last Name</label>
+            <label for="last-name">Last Name</label>
             <input type="text" class="form-control" id="last-name" placeholder="Last Name" required>
           </div>
         </div>
         <div class="form-group">
-          <label for="inputAddress">Address</label>
+          <label for="address">Address</label>
           <input type="text" class="form-control" id="address" placeholder="Address" required>
         </div>
         <div class="form-group">
-          <label for="inputAddress2">City</label>
+          <label for="city">City</label>
           <input type="text" class="form-control" id="city" placeholder="City" required>
         </div>
         <div class="form-row">
           <div class="form-group col-md-6">
-            <label for="inputCity">Email</label>
+            <label for="email">Email</label>
             <input type="email" class="form-control" id="email" placeholder="Email" required>
           </div>
         </div>

@@ -33,6 +33,19 @@ apiRequest.onreadystatechange = () => {
 };
 
 
+function updateCart() {
+  let totalQty = 0;
+
+for (let i = 0; i < localStorage.length; i++) {
+  let key = localStorage.key(i); // stores each key in the variable
+  let values = parseInt(localStorage.getItem(key));
+  totalQty= values + totalQty;
+}
+
+return document.getElementById('cartQty').textContent= totalQty;
+}
+
+updateCart();
 
 
 
