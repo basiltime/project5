@@ -1,3 +1,4 @@
+
 // Get the items's ID from the URL string
 const queryString = window.location.search;
 const urlParam = new URLSearchParams(queryString);

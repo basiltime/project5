@@ -11,11 +11,17 @@ $secondary:     #8F5BFE;
 $success:       #AFDBF4;
 $info:          #76C287;
 $warning:       #E88B1F;
-$danger:        #FF4282;
+$danger:        #ff425b;
 $light:         #F3E9F1;
 $dark:          #241628;
 
 
+
+$input-btn-focus-width:       .2rem !default;
+$input-btn-focus-color:       rgba($secondary, .25) !default;
+$input-btn-invalid-color:     rgba($danger, .75) !default;
+$input-btn-invalid-box-shadow:  0 0 0 $input-btn-focus-width $input-btn-invalid-color !default;
+$input-btn-focus-box-shadow:  0 0 0 $input-btn-focus-width $input-btn-focus-color !default;
 
 // LIST VIEW PAGE //
 .p-none {
@@ -105,3 +111,6 @@ $dark:          #241628;
   border-radius: 15px !important;
 }
 
+.invalid {
+  box-shadow: $input-btn-invalid-box-shadow;
+}

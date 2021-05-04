@@ -1,4 +1,3 @@
-
 let totalDollarAmt = 0;
 let myCart = localStorage;
 
@@ -9,10 +8,8 @@ let myCart = localStorage;
     document.getElementById("form").classList.add('d-none');
     document.getElementById("summary").classList.add('d-none');
     document.getElementById("cart-empty").classList.remove('d-none')
-  } else {
 
- 
-   
+  } else {
 
   for (let i = 0; i < localStorage.length; i++) {
 
@@ -37,9 +34,7 @@ let myCart = localStorage;
 
         //Parses JSON response objects to text and displays requested information
         response = JSON.parse(apiRequest2.response);
-        
-
-
+      
 
         // Total Price Calculation
         totalDollarAmt = totalDollarAmt + response.price * values/100;
@@ -70,12 +65,11 @@ let myCart = localStorage;
 }
 
 // Update quantity displayed in cart icon in navbar
-
   function updateCart() {
     let totalQty = 0;
   
   for (let i = 0; i < localStorage.length; i++) {
-    let key = localStorage.key(i); // stores each key in the variable
+    let key = localStorage.key(i); 
     let values = parseInt(localStorage.getItem(key));
     totalQty= values + totalQty;
   }
@@ -87,22 +81,44 @@ let myCart = localStorage;
 
 
 
-// Form Validation
-
-
+// Dom elements
 let submitButton = document.getElementById('submit-button');
 let firstName = document.getElementById('first-name');
 let lastName = document.getElementById('last-name');
 let address = document.getElementById('address');
 let city = document.getElementById('city');
 let email = document.getElementById('email');
+let form = document.getElementById('form');
+let formFieldArray = [firstName, lastName, address, city, email]
+
+// Adds event listener to highlight empty form fields
+for (let i = 0; i < formFieldArray.length; i++) {
+  formFieldArray[i].addEventListener('blur', () => {
+  if (formFieldArray[i].value.length < 1) {
+    formFieldArray[i].classList.add('invalid')
+  } else {
+    formFieldArray[i].classList.remove('invalid')
+    warning.innerHTML = "";
+  }
+})
+}
 
 
+// Event listener for submit button 
+submitButton.addEventListener('click', ($event) => {
+  $event.preventDefault()
 
 
+  // Styles empty/invalid fields with red box shadow when submit button is clicked
+  for (let i = 0; i < formFieldArray.length; i++) {
+      if (formFieldArray[i].value.length < 1) {
+        formFieldArray[i].classList.add('invalid')
+      } else {
+        formFieldArray[i].classList.remove('invalid')
+      }
+  }
 
-submitButton.addEventListener('click', () => {
-
+  // Creates array of products from local storage
   let productsArray = [];
 
   for (let i = 0; i < localStorage.length; i++) {
@@ -110,6 +126,7 @@ submitButton.addEventListener('click', () => {
     productsArray.push(item);
   }
 
+  // Creates contact object from input values
   let contactData = {
     firstName: firstName.value,
     lastName: lastName.value,
@@ -118,28 +135,62 @@ submitButton.addEventListener('click', () => {
     email: email.value,
   }
 
-  let data = {
-    contact: contactData,
-    products: productsArray
+  // Form Validation
+
+  // Checks if email input is valid
+  const emailIsValid = (email) => {
+    if (!/\S+@\S+\.\S+/.test(email)) {
+      return false
+    }
   }
-  
-  const xhr = new XMLHttpRequest();
-  
-  xhr.open('POST', 'http://localhost:3000/api/teddies/order');
-  xhr.setRequestHeader('Content-Type', 'application/json');
-  xhr.responseType = 'json';
-  xhr.send(JSON.stringify(data));
-   
-  xhr.onload = () => {
-    console.log(xhr.response);
-    let total=document.getElementById('cart-total').textContent;
-    localStorage.setItem("id", xhr.response.orderId)
-    localStorage.setItem("price", total)
-    console.log(localStorage);
-    window.location.href="/frontend/pages/confirmation-page.html"
-  };
-  
+
+  // Checks if all fields are filled out
+  const allFieldsFilled = () => {
+  let values = Object.values(contactData)
+    for (let i = 0; i < values.length; i++) {
+      if (values[i].length == 0) {
+      return false
+      }
+    }
+  }
+
+  // If fields incomplete or invalid, displays warning to fill out missing fields
+  if ( (allFieldsFilled() == false ) || (emailIsValid(contactData.email)) == false) {
+    console.log('Please fill out highlighted fields')
+    let warning = document.getElementById("warning");
+    warning.innerHTML = "Please fill out highlighted fields";         
+     
+
+    
+  // Else sends the request (if the form is validated)
+  } else {
+      let data = {
+      contact: contactData,
+      products: productsArray
+      }
+    
+      // POST request
+      const xhr = new XMLHttpRequest();
+      
+      xhr.open('POST', 'http://localhost:3000/api/teddies/order');
+      xhr.setRequestHeader('Content-Type', 'application/json');
+      xhr.responseType = 'json';
+      xhr.send(JSON.stringify(data));
+      
+      xhr.onload = () => {
+        console.log(xhr.response);
+        let total=document.getElementById('cart-total').textContent;
+        localStorage.setItem("id", xhr.response.orderId)
+        localStorage.setItem("price", total)
+        console.log(localStorage);
+        window.location.href="/frontend/pages/confirmation-page.html"
+  }
+
+}  
+
 });
+
+
 
 
 
