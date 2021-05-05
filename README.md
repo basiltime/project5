@@ -22,11 +22,4 @@ How to use the site:
 
 You will have to have `node` and `npm` installed locally on your machine.
 
-Clone this repository:
-
-https://github.com/OpenClassrooms-Student-Center/JWDP5
-
-Rename the directory to `backend`. From within the project folder, run `npm install`. Then, run `node server` in the backend directory. The server should run on `localhost` with default port 3000. 
-
-Now, go to https://basiltime.github.io/project5/ to go use the site.
-
+Clone this repository. From within the project folder, run `npm install`. Then, run `node server` in the backend directory. The server should run on `localhost` with default port 3000. 

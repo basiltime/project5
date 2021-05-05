@@ -114,3 +114,8 @@ $input-btn-focus-box-shadow:  0 0 0 $input-btn-focus-width $input-btn-focus-colo
 .invalid {
   box-shadow: $input-btn-invalid-box-shadow;
 }
+
+#warning {
+  font-size: 18px;
+  color: $danger;
+}
