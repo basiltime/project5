@@ -31,7 +31,6 @@
                             </li>
                         </ul>
                     </div>
-                   
                 </nav>
 
                 <a class="col-3 col-sm-2 col-md-1 d-flex justify-content-center align-items-center text-decoration-none" href="cart-page.html">
@@ -57,47 +56,57 @@
     <!-- SECTION  -->
 
     <section class="container">
-
-        <div class="row d-flex align-items-center pt-5">
-            <h3 class="col-12"></h3>
+    <div class="row bg-white mx-1 my-5 shadow-sm border border-warning single-product-card">
+        <div class="col-12 col-md-6 p-none">
+            <img id="image" src="#" class="image-large shadow">
         </div>
-
-    <!-- SINGLE PRODUCT CARDS -->
-    
-        <div class="bg-white row mx-1 mb-5 shadow-sm border border-warning single-product-card">
-            <div class="col-12 col-md-6 p-none">
-                <img id="image" src="#" class="image-large shadow">
-            </div>
-            <div class="col-12 col-md-6">
-                <div class="row p-3 h-50">
-                    <div class="col">
-                        <div class="h3 font-weight-bold" id="name"></div>
-                        <div id="description"></div>
-                        <div class="dropdown my-5 d-flex justify-content-start">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              Customize
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                              <button class="dropdown-item" type="button" id="option1">Option 1</button>
-                              <button class="dropdown-item" type="button" id="option2">Option 2</button>
-                              <button class="dropdown-item" type="button" id="option3">Option 3</button>
-                            </div>
-                          </div>
-                    </div>
+    <div class="col-12 col-md-6">
+        <div class="row p-none h-50">
+            <div class="col">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="h3 font-weight-bold" id="name"></div>
+                    <div id="price" class="font-weight-bold"></div>
                 </div>
-                <div class= "row p-3 h-50 align-items-end">
-                    <div class="col d-flex justify-content-between align-items-center">
-                        <div id="price" class="font-weight-bold"></div>
-                        <div class="container" id="cartButtons">
-                            
-                            <button class="btn btn-primary" id="addToCartBtn" type="button">Add to Cart</button>
-                            <button class="btn btn-primary" id="removeItemBtn" type="button">Remove</button>
+                <div id="description"></div>
+                <div class="col d-flex justify-content-between align-items-center">
+                    <div class="dropdown btn-group mb-5 d-flex justify-content-start">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Choose Color
+                        </button>
+                        <div id="dropdown" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         </div>
                     </div>
-                </div> 
             </div>
+            </div>
+            
         </div>
-    </section>
+        <div class="row p-3 h-50 d-flex justify-content-between align-items-end">
+            <button class="btn btn-primary btn-sm" id="removeItemBtn" type="button">Remove</button>
+            <button class="btn btn-primary" id="addToCartBtn" type="button">Add to Cart</button>
+        </div> 
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </section> 
 
     <!-- FOOTER -->
     <footer class="bg-dark p-3 container-fluid text-light">
@@ -147,11 +156,9 @@
 
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
 
 <script src="../js/single-item.js"></script>
 </body>

@@ -20,6 +20,6 @@ Click [here](https://docs.google.com/document/d/19DZtJHJH2nqFjnFES78r33d8LOyGKoY
 How to use the site:
 --------------------
 
-You will have to have `node` and `npm` installed locally on your machine.
+You will have to have `node` and `npm` installed locally.
 
-Clone this repository. From within the project folder, run `npm install`. Then, run `node server` in the backend directory. The server should run on `localhost` with default port 3000. 
+Clone this repository. From within the project folder, run `npm install`. Then, run `node server` in the backend directory. Then, click [here](http://127.0.0.1:5500/index.html) to use the site. The server should run on `localhost` with default port 3000. 

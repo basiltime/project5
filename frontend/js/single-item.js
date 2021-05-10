@@ -7,37 +7,54 @@ const id = urlParam.get("id");
 
 // Event listener to send GET request on load
 window.addEventListener('load', (itemId) => {
-  apiRequest2.open('GET', `http://localhost:3000/api/teddies/${id}`);
-  apiRequest2.send();
+  apiRequestItem.open('GET', `http://localhost:3000/api/teddies/${id}`);
+  apiRequestItem.send();
   updateCart();
 });
 
 
 
 // GET request body
-let apiRequest2 = new XMLHttpRequest();
-apiRequest2.onreadystatechange = () => {
-  if (apiRequest2.readyState === 4) {
-    if (apiRequest2.status == 404) { //Creates error message
+let apiRequestItem = new XMLHttpRequest();
+apiRequestItem.onreadystatechange = () => {
+  if (apiRequestItem.readyState === 4) {
+    if (apiRequestItem.status == 404) { //Creates error message
       alert("We're sorry! The page you're looking for can't be found.")
-    } else if (apiRequest2.status == 500) {
+    } else if (apiRequestItem.status == 500) {
       alert("Server error. We're working quickly to resolve the issue, please try again later.")
     } else {
       //Parses JSON response objects to text and displays requested information
-      response = JSON.parse(apiRequest2.response);
+      response = JSON.parse(apiRequestItem.response);
 
       // Populate the DOM with name, price, image and description
       document.getElementById('name').textContent=response.name;
       document.getElementById('price').textContent=`$${response.price/100}`;
       document.getElementById('image').setAttribute('src', response.imageUrl);
       document.getElementById('description').textContent=response.description;
+      
+ 
+      // Populate color customization drop down
+      for (let i in response.colors) {
+      let dropdown = document.getElementById('dropdown')
+      let item = document.createElement('button');
+      item.textContent= response.colors[i];
+      item.setAttribute("class", "dropdown-item");
+      item.setAttribute("type", "button");
+      dropdown.appendChild(item)
+      }
 
-  /*
-  Improve this code by making into a loop?
-  */
-      document.getElementById('option1').textContent = response.colors[0];
-      document.getElementById('option2').textContent = response.colors[1];
-      document.getElementById('option3').textContent = response.colors[2];
+      // Customization Dropdown Menu
+
+      let dropdownItems = document.getElementsByClassName('dropdown-item');
+
+      for (let i = 0; i < dropdownItems.length; i++) {
+        dropdownItems[i].addEventListener('click', () => {
+          document.getElementById('dropdownMenuButton').textContent = dropdownItems[i].textContent;
+        });
+      }
+        
+      
+   
     }
   }
 };
@@ -116,16 +133,7 @@ document.getElementById('removeItemBtn').addEventListener('click', ($event) => {
 
 
 
-////////////////////////////////////////////////////////////////////////
-// Customization Dropdown Menu
 
-let dropdownItems = document.getElementsByClassName('dropdown-item');
-
-for (let i = 0; i < dropdownItems.length; i++) {
-  dropdownItems[i].addEventListener('click', () => {
-    document.getElementById('dropdownMenuButton').textContent = dropdownItems[i].textContent;
-  });
-}
 
 
 

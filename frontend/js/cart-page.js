@@ -1,39 +1,40 @@
 let totalDollarAmt = 0;
-let myCart = localStorage;
+let myCart = window.localStorage;
 
-  // Loop through localStorage, adding an event listener to call the GET api and populate the table with 
-  // cart values.
+  
 
-  if (localStorage.length === 0) {
+  if (myCart.length === 0) {
+    // If nothing in localStorage, display alternate content asking user to add items to cart
     document.getElementById("form").classList.add('d-none');
     document.getElementById("summary").classList.add('d-none');
     document.getElementById("cart-empty").classList.remove('d-none')
 
   } else {
+  // Loop through localStorage, adding an event listener to call the GET api and populate the table with 
+  // cart values.
+  for (let i = 0; i < myCart.length; i++) {
 
-  for (let i = 0; i < localStorage.length; i++) {
-
-    let key = localStorage.key(i); // item id
-    let values = parseInt(localStorage.getItem(key)); // item quantity
+    let key = myCart.key(i); // item id
+    let values = parseInt(myCart.getItem(key)); // item quantity
 
 
     window.addEventListener('load', (id) => {
-        apiRequest2.open('GET', `http://localhost:3000/api/teddies/${key}`);
-        apiRequest2.send();
+        apiRequestItem.open('GET', `http://localhost:3000/api/teddies/${key}`);
+        apiRequestItem.send();
     });
 
 
-    let apiRequest2 = new XMLHttpRequest();
-    apiRequest2.onreadystatechange = () => {
-    if (apiRequest2.readyState === 4) {
-        if (apiRequest2.status == 404) { //Creates error message
+    let apiRequestItem = new XMLHttpRequest();
+    apiRequestItem.onreadystatechange = () => {
+    if (apiRequestItem.readyState === 4) {
+        if (apiRequestItem.status == 404) { //Creates error message
         alert("We're sorry! The page you're looking for can't be found.")
-        } else if (apiRequest2.status == 500) {
+        } else if (apiRequestItem.status == 500) {
         alert("Server error. We're working quickly to resolve the issue, please try again later.")
         } else {
 
         //Parses JSON response objects to text and displays requested information
-        response = JSON.parse(apiRequest2.response);
+        response = JSON.parse(apiRequestItem.response);
       
 
         // Total Price Calculation
@@ -68,9 +69,9 @@ let myCart = localStorage;
   function updateCart() {
     let totalQty = 0;
   
-  for (let i = 0; i < localStorage.length; i++) {
-    let key = localStorage.key(i); 
-    let values = parseInt(localStorage.getItem(key));
+  for (let i = 0; i < myCart.length; i++) {
+    let key = myCart.key(i); 
+    let values = parseInt(myCart.getItem(key));
     totalQty= values + totalQty;
   }
   
@@ -121,8 +122,8 @@ submitButton.addEventListener('click', ($event) => {
   // Creates array of products from local storage
   let productsArray = [];
 
-  for (let i = 0; i < localStorage.length; i++) {
-    let item = localStorage.key(i); // item id
+  for (let i = 0; i < myCart.length; i++) {
+    let item = myCart.key(i); // item id
     productsArray.push(item);
   }
 
@@ -155,15 +156,17 @@ submitButton.addEventListener('click', ($event) => {
   }
 
   // If fields incomplete or invalid, displays warning to fill out missing fields
-  if ( (allFieldsFilled() == false ) || (emailIsValid(contactData.email)) == false) {
+  if (allFieldsFilled() == false )  {
     console.log('Please fill out highlighted fields')
     let warning = document.getElementById("warning");
     warning.innerHTML = "Please fill out highlighted fields";         
-     
+  } else if (emailIsValid(email.value) == false) 
+
+  {let email = document.getElementById('email'); email.classList.add('invalid'); warning.innerHTML = "Please enter a valid email address"}
 
     
   // Else sends the request (if the form is validated)
-  } else {
+   else {
       let data = {
       contact: contactData,
       products: productsArray
@@ -180,9 +183,9 @@ submitButton.addEventListener('click', ($event) => {
       xhr.onload = () => {
         console.log(xhr.response);
         let total=document.getElementById('cart-total').textContent;
-        localStorage.setItem("id", xhr.response.orderId)
-        localStorage.setItem("price", total)
-        console.log(localStorage);
+        myCart.setItem("id", xhr.response.orderId)
+        myCart.setItem("price", total)
+        console.log(myCart);
         window.location.href="/frontend/pages/confirmation-page.html"
   }
 
