@@ -1,25 +1,15 @@
-Project 5: Build an E-Commerce Site
-===========================
+# Orinoco #
 
-The goal of the project is to use an API to retrieve and send data to an existing backend.
-------------------------------------------------------------------------------------------
+This is the back end server for Project 5 of the Junior Web Developer path.
 
-Site Structure:
----------------
+### Prerequisites ###
 
-* A list view page, showing all items available for sale. 
-* A single product page (using URL query parameters), which will dynamically show the item selected by the user, display a description and price in dollars, and allow users to personalize the product and add it to their cart. 
-* A cart page (using the localStorage JavaScript functionality), showing a summary of products in the cart, the total price, and a form with which to submit an order.
-* An order confirmation page , thanking the user for their order, showing the total price and the order ID returned by the server. 
+You will need to have Node and `npm` installed locally on your machine.
 
-Test Plan:
-----------
-Click [here](https://docs.google.com/document/d/19DZtJHJH2nqFjnFES78r33d8LOyGKoYEXOfRu9EoTD0/edit?usp=sharing) to view the Test Plan
+### Installation ###
 
-
-How to use the site:
---------------------
-
-You will have to have `node` and `npm` installed locally.
-
-Clone this repository. From within the project folder, run `npm install`. Then, run `node server` in the backend directory. Then, click [here](http://127.0.0.1:5500/index.html) to use the site. The server should run on `localhost` with default port 3000. 
+Clone this repo. From within the project folder, run `npm install`. You 
+can then run the server with `node server`. 
+The server should run on `localhost` with default port `3000`. If the
+server runs on another port for any reason, this is printed to the
+console when the server starts, e.g. `Listening on port 3001`.
