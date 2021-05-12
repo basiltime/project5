@@ -7,13 +7,19 @@ let apiRequestList = new XMLHttpRequest();
 
 
 apiRequestList.onreadystatechange = () => {
-  if (apiRequestList.readyState === 4) { // If API finishes loading stages
+  if (apiRequestList.readyState === 4) {
+   
+    // Get the first digit of the status code in case of an error
+    let statusCode = apiRequestList.status;
+    let firstDigit = statusCode.toString()[0];
     
-    if (apiRequestList.status == 404) { //Creates error message
-      alert("We're sorry! The page you're looking for can't be found.")
-    } else if (apiRequestList.status == 500) {
-      alert("Server error. We're working quickly to resolve the issue, please try again later.")
-    } else { //Parses JSON response objects to text and displays requested information
+    if (firstDigit == 4) { 
+      window.location.href = "frontend/pages/error-page-404.html"
+
+    } else if (firstDigit == 5) {
+      window.location.href = "frontend/pages/error-page-500.html"
+
+    } else { 
       
       response = JSON.parse(apiRequestList.response);
         buttons= document.getElementsByClassName('btn');
