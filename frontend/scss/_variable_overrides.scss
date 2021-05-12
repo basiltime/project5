@@ -16,6 +16,7 @@ $light:         #F3E9F1;
 $dark:          #241628;
 
 
+
 $input-btn-focus-width:       .2rem !default;
 $input-btn-focus-color:       rgba($secondary, .25) !default;
 $input-btn-invalid-color:     rgba($danger, .75) !default;
@@ -77,29 +78,11 @@ $input-btn-focus-box-shadow:  0 0 0 $input-btn-focus-width $input-btn-focus-colo
   width: 100%;
   min-height: 100%;
   object-fit: cover;
-
 }
-
-@media (max-width: 767.98px) {
-   .image-large {
-     border-top-left-radius: 15px;
-     border-top-right-radius: 15px;
-   } 
-  }
-
-  @media (min-width: 767.98px) {
-     .image-large {
-      border-top-left-radius: 15px;
-      border-bottom-left-radius: 15px;
-     
-  } 
-  }
 
 .single-product-card {    // The wrapper for the large single product view card
   border-radius: 15px;
-  max-width: 800px;
-  position: relative;
-  top: 0px;
+  overflow: hidden;
 }
 
 
@@ -116,20 +99,17 @@ $input-btn-focus-box-shadow:  0 0 0 $input-btn-focus-width $input-btn-focus-colo
   
 }
 
-#cart-empty-wrapper {
-  min-height: 650px;
-  width: 95%;
+#confirmation-page {
+  height: 600px;
   max-width: 500px;
   border-radius: 15px !important;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
-#cart-empty-content {
-  border-radius: 15px;
+#cart-empty {
+  height: 300px;
+  max-width: 500px;
+  border-radius: 15px !important;
 }
-
 
 .invalid {
   box-shadow: $input-btn-invalid-box-shadow;
@@ -140,28 +120,3 @@ $input-btn-focus-box-shadow:  0 0 0 $input-btn-focus-width $input-btn-focus-colo
   color: $danger;
 }
 
-
-.footer {
-  position: relative;
-  bottom: 0px;
-}
-
-@media (max-width: 378px) {
-  #summary, #form {
-    width: 100% !important;
-    font-size: smaller !important;
-  }
- }
-
- #confirmation-page-wrapper {
-  min-height: 650px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
- }
-
- #confirmation-page-content {
-   border-radius: 15px !important;
-   width: 95%;
-   max-width: 500px;
- }

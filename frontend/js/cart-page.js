@@ -7,13 +7,11 @@ let myCart = window.localStorage;
     // If nothing in localStorage, display alternate content asking user to add items to cart
     document.getElementById("form").classList.add('d-none');
     document.getElementById("summary").classList.add('d-none');
-    document.getElementById("cart-empty-wrapper").classList.remove('d-none')
-   
+    document.getElementById("cart-empty").classList.remove('d-none')
+
   } else {
   // Loop through localStorage, adding an event listener to call the GET api and populate the table with 
   // cart values.
-  document.getElementById("cart-empty-wrapper").classList.add('d-none');
-
   for (let i = 0; i < myCart.length; i++) {
 
     let key = myCart.key(i); // item id

@@ -42,30 +42,22 @@
 
 
 
-<!-- Cart Empty Div -->
-<section id="cart-empty-wrapper" class="d-none mx-auto">
-    <div class="container">
-        <div class="row">
-            <div id="cart-empty-content" class="py-4 my-4 col shadow-sm border border-warning">
-                <div class="h2 text-center">Uh oh, your cart is bare!</div>
-                <hr>
-                <div class="h4 text-center">Click <a href="../../index.html" class="text-decoration-none">here </a>to continue shopping</div>
-            </div>
-        </div>
-    </div>
-</section>
-
 <!-- Order Summary -->
 
-<section id="summary" class="container pt-3 mt-5 mx-auto border border-light w-75">
+<div class="container shadow-sm border border-warning my-5 py-5 d-none" id="cart-empty">
+    <div class="h2 m-3 text-center">Uh oh, looks like your cart is a bit bare!</div>
+    <div class="h4 m-5 text-center">Click <a href="../../index.html" class="text-decoration-none">here </a>to continue shopping</div>
+</div>
+
+<section id="summary" class="container cart-summary p-5">
     <div class="row">
         <div class="col">
-            <div class="h4 pt-1">Your Cart</div>
+            <div class="h3">Your Cart</div>
             <table class="table flex-column-reverse" id="myTable">
                 <thead>
                     <tr>
                       <th scope="col">Item</th>
-                      <th scope="col">Qty</th>
+                      <th scope="col">Quantity</th>
                       <th scope="col">Unit Price</th>
                       <th scope="col">Price</th>
                     </tr>
@@ -76,8 +68,8 @@
                     <tr>
                         <th></th>
                         <th></th>
-                        <th class="text-secondary">Total</th>
-                        <th id="cart-total" class="text-secondary"></th>
+                        <th>Your Total</th>
+                        <th id="cart-total"></th>
                     </tr>
                 </tfoot>
               </table>
@@ -85,13 +77,13 @@
     </div>
 </section>
 
+<!-- 
+<section id="form" class="container"> -->
 
-<section class="container my-5 mx-auto border border-light w-75">
-      <form id="form" class="my-1">
-        <div class="h4 pt-3">Enter your order details</div> 
-        <hr>
+
+      <form id="form" class="container mb-5">
         <div class="form-row d-flex justify-content-center align-items-center">
-            <div id="warning"></div>
+            <div id="warning" class="p-5"></div>
         </div>
         <div class="form-row">
           <div class="form-group col-md-6">
@@ -115,11 +107,13 @@
           <div class="form-group col-md-6">
             <label for="email">Email Address</label>
             <input type="text" class="form-control" id="email" placeholder="Email Address">
-            <input type="submit" id="submit-button" class="btn btn-primary mt-3" value="Submit">
           </div>
         </div>
+        <div class="form-row">
+            <input type="submit" id="submit-button" class="btn btn-primary" value="Submit">
+        </div>
       </form>
-</section>
+
       
 
 <!-- FOOTER -->

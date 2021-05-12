@@ -41,7 +41,7 @@ apiRequestItem.onreadystatechange = () => {
       item.setAttribute("class", "dropdown-item");
       item.setAttribute("type", "button");
       dropdown.appendChild(item)
-      } 
+      }
 
       // Customization Dropdown Menu
 
