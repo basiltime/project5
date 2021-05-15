@@ -1,28 +1,20 @@
-// Variables
-//
-// Variables should follow the `$component-state-property-size` formula for
-// consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
-
-
-
 //  Custom Color system
-$primary:       #8a4d9c;
-$secondary:     #8F5BFE;
-$success:       #AFDBF4;
-$info:          #76C287;
-$warning:       #E88B1F;
-$danger:        #ff425b;
-$light:         #F3E9F1;
-$dark:          #241628;
+$primary: #8a4d9c;
+$secondary: #8F5BFE;
+$success: #AFDBF4;
+$info: #76C287;
+$warning: #E88B1F;
+$danger: #ff425b;
+$light: #F3E9F1;
+$dark: #241628;
 
 
-$input-btn-focus-width:       .2rem !default;
-$input-btn-focus-color:       rgba($secondary, .25) !default;
-$input-btn-invalid-color:     rgba($danger, .75) !default;
-$input-btn-invalid-box-shadow:  0 0 0 $input-btn-focus-width $input-btn-invalid-color !default;
-$input-btn-focus-box-shadow:  0 0 0 $input-btn-focus-width $input-btn-focus-color !default;
+$input-btn-focus-width: .2rem !default;
+$input-btn-focus-color: rgba($secondary, .25) !default;
+$input-btn-invalid-color: rgba($danger, .75) !default;
+$input-btn-invalid-box-shadow: 0 0 0 $input-btn-focus-width $input-btn-invalid-color !default;
+$input-btn-focus-box-shadow: 0 0 0 $input-btn-focus-width $input-btn-focus-color !default;
 
-// LIST VIEW PAGE //
 .p-none {
   padding: 0px !important;
 }
@@ -48,9 +40,6 @@ $input-btn-focus-box-shadow:  0 0 0 $input-btn-focus-width $input-btn-focus-colo
   object-fit: cover;
 }
 
-
-
-
 .jumbotron {
   margin-bottom: 0px !important;
   margin-left: 0px !important;
@@ -72,36 +61,33 @@ $input-btn-focus-box-shadow:  0 0 0 $input-btn-focus-width $input-btn-focus-colo
   background-color: $warning;
 }
 
-// SINGLE VIEW PAGE //
 .image-large {
   width: 100%;
   min-height: 100%;
   object-fit: cover;
-
 }
 
 @media (max-width: 767.98px) {
-   .image-large {
-     border-top-left-radius: 15px;
-     border-top-right-radius: 15px;
-   } 
+  .image-large {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
   }
+}
 
-  @media (min-width: 767.98px) {
-     .image-large {
-      border-top-left-radius: 15px;
-      border-bottom-left-radius: 15px;
-     
-  } 
+@media (min-width: 767.98px) {
+  .image-large {
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
   }
+}
 
-.single-product-card {    // The wrapper for the large single product view card
+
+.single-product-card {
   border-radius: 15px;
   max-width: 800px;
   position: relative;
   top: 0px;
 }
-
 
 #cartQty {
   border-radius: 50%;
@@ -113,23 +99,19 @@ $input-btn-focus-box-shadow:  0 0 0 $input-btn-focus-width $input-btn-focus-colo
   left: 30px;
   bottom: -5px;
   font-size: 9px;
-  
 }
 
 #cart-empty-wrapper {
-  min-height: 650px;
+  min-height: 550px;
   width: 95%;
   max-width: 500px;
+  margin-top: 10%;
   border-radius: 15px !important;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 #cart-empty-content {
   border-radius: 15px;
 }
-
 
 .invalid {
   box-shadow: $input-btn-invalid-box-shadow;
@@ -141,27 +123,27 @@ $input-btn-focus-box-shadow:  0 0 0 $input-btn-focus-width $input-btn-focus-colo
 }
 
 
-.footer {
-  position: relative;
-  bottom: 0px;
-}
+
 
 @media (max-width: 378px) {
-  #summary, #form {
+
+  #summary,
+  #form {
     width: 100% !important;
     font-size: smaller !important;
   }
- }
+}
 
- #confirmation-page-wrapper {
-  min-height: 650px;
+#confirmation-page-wrapper {
+  min-height: 750px;
   display: flex;
   justify-content: center;
   align-items: center;
- }
+}
 
- #confirmation-page-content {
-   border-radius: 15px !important;
-   width: 95%;
-   max-width: 500px;
- }
+#confirmation-page-content {
+  border-radius: 15px !important;
+  width: 95%;
+  max-width: 500px;
+}
+
