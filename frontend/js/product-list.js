@@ -47,5 +47,4 @@ function updateCart() {
 
   return document.getElementById('cartQty').textContent = totalQty;
 }
-
 updateCart();

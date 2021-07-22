@@ -162,28 +162,28 @@ submitButton.addEventListener('click', ($event) => {
 
   // Create the data object and send POST request IF form is validated
   else {
-  //   let data = {
-  //     contact: contactData,
-  //     products: productsArray
-  //   }
+    let data = {
+      contact: contactData,
+      products: productsArray
+    }
 
-  //   // POST request
-  //   const xhr = new XMLHttpRequest();
+    // POST request
+    const xhr = new XMLHttpRequest();
 
-  //   xhr.open('POST', 'http://localhost:3000/api/teddies/order');
-  //   xhr.setRequestHeader('Content-Type', 'application/json');
-  //   xhr.responseType = 'json';
-  //   xhr.send(JSON.stringify(data));
+    xhr.open('POST', 'http://localhost:3000/api/teddies/order');
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.responseType = 'json';
+    xhr.send(JSON.stringify(data));
 
-  //   // Handle API Response  
-  //   xhr.onload = () => {
-  //     console.log(xhr.response);
-  //     let total = document.getElementById('cart-total').textContent;
-  //     myCart.setItem("id", xhr.response.orderId)
-  //     myCart.setItem("price", total)
-  //     window.location.href = "/frontend/pages/confirmation-page.html"
-  //   }
-  // }
+    // Handle API Response  
+    xhr.onload = () => {
+      console.log(xhr.response);
+      let total = document.getElementById('cart-total').textContent;
+      myCart.setItem("id", xhr.response.orderId)
+      myCart.setItem("price", total)
+      window.location.href = "/frontend/pages/confirmation-page.html"
+    }
+  }
 
 
 
@@ -213,4 +213,4 @@ postData('http://localhost:3000/api/teddies/order', data )
   }).catch(window.location.href = "/frontend/pages/error-page-404.html")
 }
 
-})
+)
