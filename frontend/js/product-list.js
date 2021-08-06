@@ -3,6 +3,7 @@ window.addEventListener('load', () => {
   apiRequestList.send();
 });
 
+
 let apiRequestList = new XMLHttpRequest();
 
 apiRequestList.onreadystatechange = () => {
@@ -36,6 +37,7 @@ apiRequestList.onreadystatechange = () => {
 };
 
 
+
 function updateCart() {
   let totalQty = 0;
 
@@ -47,5 +49,4 @@ function updateCart() {
 
   return document.getElementById('cartQty').textContent = totalQty;
 }
-
 updateCart();

@@ -1,9 +1,9 @@
 //  Custom Color system
-$primary: #8a4d9c;
-$secondary: #8F5BFE;
+$primary: #7FD1B9;
+$secondary: #7FD1B9;
 $success: #AFDBF4;
-$info: #76C287;
-$warning: #E88B1F;
+$info: #f7c294;
+$warning: #7FD1B9;
 $danger: #ff425b;
 $light: #F3E9F1;
 $dark: #241628;
@@ -40,16 +40,6 @@ $input-btn-focus-box-shadow: 0 0 0 $input-btn-focus-width $input-btn-focus-color
   object-fit: cover;
 }
 
-.jumbotron {
-  margin-bottom: 0px !important;
-  margin-left: 0px !important;
-  padding-left: 0px !important;
-}
-
-#jumbotron-wrapper {
-  border-top: 1px solid $warning !important;
-  border-bottom: 1px solid $warning !important;
-}
 
 .h1-shadow {
   text-shadow: 1px 1px 2px $warning;
@@ -91,8 +81,8 @@ $input-btn-focus-box-shadow: 0 0 0 $input-btn-focus-width $input-btn-focus-color
 
 #cartQty {
   border-radius: 50%;
-  background-color: $info;
-  border: 1px solid darken($info, 10%);
+  background-color: $light;
+  border: 1px solid darken($light, 10%);
   min-width: 15px;
   min-height: 15px;
   position: relative;
