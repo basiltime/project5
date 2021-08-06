@@ -209,8 +209,8 @@ postData('http://localhost:3000/api/teddies/order', data )
     let total = document.getElementById('cart-total').textContent;
     myCart.setItem("id", data.orderId)
     myCart.setItem("price", total)
-    window.location.href = "/frontend/pages/confirmation-page.html"
-  }).catch(window.location.href = "/frontend/pages/error-page-404.html")
+    window.location.href = "../../frontend/pages/confirmation-page.html"
+  }).catch(window.location.href = "../../frontend/pages/error-page-404.html")
 }
 
 )

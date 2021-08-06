@@ -3,6 +3,7 @@ window.addEventListener('load', () => {
   apiRequestList.send();
 });
 
+
 let apiRequestList = new XMLHttpRequest();
 
 apiRequestList.onreadystatechange = () => {
@@ -34,6 +35,7 @@ apiRequestList.onreadystatechange = () => {
     }
   }
 };
+
 
 
 function updateCart() {
